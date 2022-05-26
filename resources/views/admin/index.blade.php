@@ -21,7 +21,6 @@
                                     </th>
                                     <td>{{$post->author}}</td>
                                     <td>{{$post->created_at}}</td>
-
                             </tr>
                         @empty
                             <tr>
