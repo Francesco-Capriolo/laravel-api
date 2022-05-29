@@ -12183,7 +12183,7 @@ fieldset:disabled .btn {
   color: #636b6f;
   font-family: "Nunito", sans-serif;
   font-weight: 200;
-  height: 100vh;
+  height: 8vh;
   margin: 0;
 }
 
@@ -12227,5 +12227,10 @@ fieldset:disabled .btn {
 
 #guest-home-wrapper .m-b-md {
   margin-bottom: 30px;
+}
+
+#guest-home-wrapper .height-user {
+  height: 15vh;
+  font-size: small;
 }
 

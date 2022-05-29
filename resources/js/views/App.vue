@@ -1,13 +1,24 @@
 <template>
-  <h1>Ciaoneeeeee</h1>
+  <div>
+    <postlist />
+  </div>
 </template>
 
 <script>
+import Postlist from "../components/Postlist.vue";
+
 export default {
   name: "App",
-  components: {},
+  data: function () {
+    return {
+      postlist: [],
+    };
+  },
+  components: {
+    Postlist,
+  },
 };
 </script>
 
-<style lang="" scoped>
+<style lang="scss" scoped>
 </style>

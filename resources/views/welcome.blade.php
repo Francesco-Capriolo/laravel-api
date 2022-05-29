@@ -13,15 +13,29 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
     </head>
+    {{-- Esercizio di oggi: Boolpress API
+        Nome repo: laravel-api
+        Descrizione:
+        Copiando in una nuova repo il progetto di boolpress che avete già iniziato, implementate
+        quello che abbiamo visto insieme stamattina a lezione:
+        nello specifico l'implementazione di un'api da back-office, il recupero da front-office via VueJS
+        e la visualizzazione dei dati recuperati (senza necessità di abbellimento particolari).
+        Se volete sperimentare con elementi estetici a vostro piacere, sentitevi comunque libere e liberi.
+        Funzionalità richieste (api + front-office light):
+        Esposizione di Api da back-office via Laravel Route
+        Implementazione di Vue per front-office
+        Recuperare via Axios i dati dell'api in Vue
+        Mostrare i dati in una pagina accessibile alle utenze non registrate (guests)
+        anche via console va benissimo. --}}
     <body>
         <section id="guest-home-wrapper">
             <div class="flex-center position-ref full-height">
                 @if (Route::has('login'))
                     <div class="top-right links">
                         @auth
-                            <a href="{{ url('/home') }}">Home</a>
-                            <a href="{{ url('/home') }}">Posts</a>
-                            <a href="{{ url('/home') }}">Category</a>
+                            <a href="{{ route('home') }}">Home</a>
+                            {{-- <a href="{{ route('admin.posts.index') }}">Posts</a>
+                            <a href="{{ url('/home') }}">Category</a> --}}
                         @else
                             <a href="{{ route('login') }}">Login</a>
 
@@ -31,29 +45,12 @@
                         @endauth
                     </div>
                 @endif
-
-                <div class="content">
-                    <div class="title m-b-md">
-                        @if (Auth::check())
-                            Benvenuto {{Auth::user()->name}}
-                        @else
-                        Laravel
-                        @endif
-                    </div>
-
-                    <div class="links">
-                        <a href="https://laravel.com/docs">Docs</a>
-                        <a href="https://laracasts.com">Laracasts</a>
-                        <a href="https://laravel-news.com">News</a>
-                        <a href="https://blog.laravel.com">Blog</a>
-                        <a href="https://nova.laravel.com">Nova</a>
-                        <a href="https://forge.laravel.com">Forge</a>
-                        <a href="https://vapor.laravel.com">Vapor</a>
-                        <a href="https://github.com/laravel/laravel">GitHub</a>
-                    </div>
-                </div>
             </div>
         </section>
+
+        <div id="root">
+            <App/>
+        </div>
 
         <script src="{{asset('js/front.js')}}"></script>
     </body>

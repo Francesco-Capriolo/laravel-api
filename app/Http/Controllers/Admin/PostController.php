@@ -18,7 +18,7 @@ class PostController extends Controller
     {
         //$data['user']=Auth::user();
         //$data['id']=Auth::id();
-        $posts= Post::orderBy('id','desc')->paginate(10);
+        $posts= Post::orderBy('id','desc')->paginate(20);
         return view('admin.index',['posts'=>$posts]);
     }
 

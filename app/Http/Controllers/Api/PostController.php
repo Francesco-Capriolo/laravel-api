@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(10);
+        $posts = Post::paginate(12);
 
         return response()->json($posts); //$ oppure json(compact('posts'))
             /* // £ usare questo metodo per quando si fa ::all()  [
@@ -41,7 +41,7 @@ class PostController extends Controller
      * @param  int  $id //$ dependency injection: Post $post
      * @return \Illuminate\Http\Response
      */
-    public function show($id) //$ show(POst $post)
+    public function show($id) //$ show(Post $post)
     {
         $post=Post::findOrFail($id);//$ non scrivere la riga 46 e cambiare sulla route api {$post} al posto {$id}
         return response()->json( // £ si può scrive anche json($post)
