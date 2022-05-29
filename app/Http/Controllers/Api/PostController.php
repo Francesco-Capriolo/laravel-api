@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(12);
+        $posts = Post::with('categories')->paginate(12);
 
         return response()->json($posts); //$ oppure json(compact('posts'))
             /* // £ usare questo metodo per quando si fa ::all()  [
